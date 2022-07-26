@@ -88,5 +88,6 @@ parts:
             - usr/local/bin/svsematest
             - usr/local/bin/ssdd
             - usr/local/bin/queuelat
+            - usr/lib/**/libnuma*
 
 # vim: set ai et sts=4 tabstop=4 sw=4:
