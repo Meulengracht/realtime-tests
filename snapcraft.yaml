@@ -1,0 +1,92 @@
+#
+# Copyright (C) 2022 Canonical
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+#
+name: realtime-tests
+version: "2.4"
+summary: Suite of real-time tests
+description: real-time tests cyclicdeadline, cyclictest, deadline_test, pip_stress, pi_stress, pmqtest, ptsematest, rt-migrate-test, signaltest, sigwaittest, ssdd, svsematest, queuelat
+confinement: strict
+grade: stable
+base: core22
+apps:
+    cyclicdeadline:
+        command: usr/local/bin/cyclicdeadline
+        plugs: [ process-control ]
+    cyclictest:
+        command: usr/local/bin/cyclictest
+        plugs: [ process-control ]
+    deadline-test:
+        command: usr/local/bin/deadline_test
+        plugs: [ process-control ]
+    pip-stress:
+        command: usr/local/bin/pip_stress
+        plugs: [ process-control ]
+    pi-stress:
+        command: usr/local/bin/pi_stress
+        plugs: [ process-control ]
+    pmqtest:
+        command: usr/local/bin/pmqtest
+        plugs: [ process-control ]
+    ptsematest:
+        command: usr/local/bin/ptsematest
+        plugs: [ process-control ]
+    rt-migrate-test:
+        command: usr/local/bin/rt-migrate-test
+        plugs: [ process-control ]
+    signaltest:
+        command: usr/local/bin/signaltest
+        plugs: [ process-control ]
+    sigwaittest:
+        command: usr/local/bin/sigwaittest
+        plugs: [ process-control ]
+    ssdd:
+        command: usr/local/bin/ssdd
+        plugs: [ process-control ]
+    svsematest:
+        command: usr/local/bin/svsematest
+        plugs: [ process-control ]
+    queuelat:
+        command: usr/local/bin/queuelat
+        plugs: [ process-control ]
+parts:
+    realtime-tests:
+        plugin: make
+        source: https://git.kernel.org/pub/scm/utils/rt-tests/rt-tests.git
+        source-branch: v2.4
+        build-packages:
+            - build-essential
+            - libnuma-dev
+            - python3
+        stage-packages:
+            - libnuma1
+        prime:
+            - usr/local/bin/cyclicdeadline
+            - usr/local/bin/cyclictest
+            - usr/local/bin/deadline_test
+            - usr/local/bin/hackbench
+            - usr/local/bin/pip_stress
+            - usr/local/bin/pi_stress
+            - usr/local/bin/pmqtest
+            - usr/local/bin/ptsematest
+            - usr/local/bin/rt-migrate-test
+            - usr/local/bin/signaltest
+            - usr/local/bin/sigwaittest
+            - usr/local/bin/svsematest
+            - usr/local/bin/ssdd
+            - usr/local/bin/queuelat
+
+# vim: set ai et sts=4 tabstop=4 sw=4:
