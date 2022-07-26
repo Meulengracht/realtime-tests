@@ -15,7 +15,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #
-name: realtime-tests
+name: realtime-tests-phme
 version: "2.4"
 summary: Suite of real-time tests
 description: real-time tests cyclicdeadline, cyclictest, deadline_test, pip_stress, pi_stress, pmqtest, ptsematest, rt-migrate-test, signaltest, sigwaittest, ssdd, svsematest, queuelat
