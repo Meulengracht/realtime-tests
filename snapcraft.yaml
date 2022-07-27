@@ -32,6 +32,9 @@ apps:
     deadline-test:
         command: usr/local/bin/deadline_test
         plugs: [ process-control ]
+    hackbench:
+        command: usr/local/bin/hackbench
+        plugs: [ process-control ]
     pip-stress:
         command: usr/local/bin/pip_stress
         plugs: [ process-control ]
